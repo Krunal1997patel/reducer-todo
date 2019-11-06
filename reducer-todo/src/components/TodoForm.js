@@ -20,6 +20,8 @@ const TodoForm = (props) => {
               props.dispatch({type: 'ADD_TODO', payload: addTodo})
               setAddTodo('')
            }}>Add</button>
+
+           <button onClick={() => props.dispatch({type: 'REMOVE_CROSS_LIST'})}>Clean Cross </button>
         </div>
     )
 }

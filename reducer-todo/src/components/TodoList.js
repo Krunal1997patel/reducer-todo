@@ -3,7 +3,7 @@ import Todo from './Todo';
 
 
 const TodoList = (props) => {
-    
+
     console.log(props.state.items)
 
     return(
@@ -14,6 +14,7 @@ const TodoList = (props) => {
                         name={list.name}
                         completed={list.completed}
                         id={list.id}
+                        dispatch={props.dispatch}
                     />
                 ))
             }

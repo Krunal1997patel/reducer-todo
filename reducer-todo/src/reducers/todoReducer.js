@@ -24,6 +24,25 @@ export const reducer = (state, action) => {
                 items: [ newItem, ...state.items]
             }
 
+            case 'TOGGLE':
+               return{
+                   items: state.items.map(list => {
+                       if(list.id === action.payload){
+                           return{
+                               ...list,
+                               completed: !list.completed
+                           }
+                       }else{
+                           return list
+                       }
+                   })
+               }
+
+            case 'REMOVE_CROSS_LIST':
+                return{
+                    items: state.items.filter(item => !item.completed)
+                }
+
         default:
             return state
     }

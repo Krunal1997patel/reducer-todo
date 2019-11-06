@@ -7,3 +7,11 @@ body{
    color: white;
 }
 
+.list-cross{
+  text-decoration: line-through;
+  color: red;
+}
+
+.list{
+  color: white;
+}
