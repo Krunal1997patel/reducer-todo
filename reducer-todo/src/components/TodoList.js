@@ -4,8 +4,6 @@ import Todo from './Todo';
 
 const TodoList = (props) => {
 
-    console.log(props.state.items)
-
     return(
         <div>
             {
@@ -18,6 +16,8 @@ const TodoList = (props) => {
                     />
                 ))
             }
+
+            <button onClick={()=> props.dispatch({type: 'CLEAN_LIST'})}>Clean List</button>
         </div>
     )
 }

@@ -43,6 +43,11 @@ export const reducer = (state, action) => {
                     items: state.items.filter(item => !item.completed)
                 }
 
+            case 'CLEAN_LIST':
+                return{
+                    items: []
+                }
+
         default:
             return state
     }

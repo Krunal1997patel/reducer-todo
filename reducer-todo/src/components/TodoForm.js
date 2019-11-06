@@ -8,6 +8,8 @@ const TodoForm = (props) => {
         setAddTodo(e.target.value);
     }
 
+    // console.log(props.state.items.length)
+
     return(
         <div>
            <input
@@ -17,11 +19,17 @@ const TodoForm = (props) => {
             onChange={handleChange}
            />
            <button onClick={() => {
-              props.dispatch({type: 'ADD_TODO', payload: addTodo})
-              setAddTodo('')
+                addTodo === '' 
+            ?   setAddTodo('')
+            :   props.dispatch({type: 'ADD_TODO', payload: addTodo})
+                    setAddTodo('')
+                
            }}>Add</button>
 
-           <button onClick={() => props.dispatch({type: 'REMOVE_CROSS_LIST'})}>Clean Cross </button>
+           <button onClick={() => {
+              
+               props.dispatch({type: 'REMOVE_CROSS_LIST'})
+           }}>Clean Cross </button>
         </div>
     )
 }
