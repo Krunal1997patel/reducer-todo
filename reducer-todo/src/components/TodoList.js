@@ -1,9 +1,22 @@
 import React from 'react';
+import Todo from './Todo';
 
-const TodoList = () => {
+
+const TodoList = (props) => {
+    
+    console.log(props.state.items)
+
     return(
         <div>
-            <h1>I am the list of </h1>
+            {
+                props.state.items.map(list => (
+                    <Todo
+                        name={list.name}
+                        completed={list.completed}
+                        id={list.id}
+                    />
+                ))
+            }
         </div>
     )
 }
